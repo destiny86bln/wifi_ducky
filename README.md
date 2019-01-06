@@ -1,10 +1,10 @@
 # Wi-Fi Ducky
 Upload, save and run keystroke injections remotely with an ESP8266 + ATmega32u4
 
-![image of my DIY Wi-Fi Duck](https://raw.githubusercontent.com/spacehuhn/wifi_ducky/master/images/my_wifi_duck.jpg)
- 
-**Support me and my projects on [Patreon!](https://www.patreon.com/spacehuhn)**  
-[<img width="200" alt="Support me on Patreon" src="https://raw.githubusercontent.com/spacehuhn/wifi_ducky/master/images/patreon.png">](https://www.patreon.com/spacehuhn)  
+
+
+![image of my cjmcu-3212 Wi-Fi Duck](https://raw.githubusercontent.com/destiny86bln/wifi_ducky/master/images/cjmcu-3212_front.png)
+![image of my cjmcu-3212 Wi-Fi Duck](https://raw.githubusercontent.com/destiny86bln/wifi_ducky/master/images/cjmcu-3212_back.png)
 
 
 ## Contents
@@ -28,9 +28,9 @@ Upload, save and run keystroke injections remotely with an ESP8266 + ATmega32u4
 
 ### What it is
 
-It's a Wi-Fi controlled BadUSB device to remotely execute Ducky Scripts. 
+It's a Wi-Fi controlled BadUSB device to remotely execute Ducky Scripts.
 
-Using a USB device which act as a keyboard to inject keystrokes is well known these days. 
+Using a USB device which act as a keyboard to inject keystrokes is well known these days.
 The [USB Rubber Ducky](https://hakshop.com/products/usb-rubber-ducky-deluxe) by [Hak5](https://www.hak5.org/) is THE hacker gadget for this kind of attack. It introduced a simple script language called *Ducky Script*, which this project uses too.
 
 ### How it works
@@ -125,27 +125,6 @@ Then compile and upload it to your ESP8266 (check if your settings are right).
 
 Open the `arduino_wifi_duck` sketch in Arduino and upload it to your Arduino.  
 
-### Wire everything up
-
-Ok so now you need to connect the ESP8266 with the Arduino.  
-Connect these pins:
-
-| Arduino       | ESP82666      |
-| ------------- |:-------------:|
-| TX            | RX            |
-| RX            | TX            |
-| GND           | GND           |
-| VCC (3.3V)    | VCC (3.3V)    |
-
-Like I mentioned before, you'll need a 3.3V regulator if your Arduino only provides 5V.  
-**Don't connect the ESP8266 to 5V!**  
-
-If you use a plain ESP-12 like me, you also have to set the enable pin and to HIGH and GPIO15 to LOW:
-
-| PIN          | Mode       |
-| ------------ |:----------:|
-| GPIO15       | LOW (GND)  |
-| CH_PD (EN)   | HIGH (3.3V)|
 
 
 ### Update ESP8266 over the Web interface
@@ -157,7 +136,7 @@ Go to `192.168.4.1/update` and upload the new .bin file.
 ## How to use it
 
 Plug your Wi-Fi Ducky in and connect to the new Wi-Fi network `WiFi Duck`. The password is `quackquack`.  
-Open your browser and go to `192.168.4.1`. 
+Open your browser and go to `192.168.4.1`.
 
 ![screenshot of the webinterface](https://raw.githubusercontent.com/spacehuhn/wifi_ducky/master/images/wifiduck_screenshot_1.jpg)
 
